@@ -1,10 +1,10 @@
-    const pizzaSize = document.getElementById('pizza');
-    const pizzaQuantity = document.getElementById('Cantidad');
-    const extrasRefresco = document.getElementById('refresco');
-    const extrasPapas = document.getElementById('papas');
-    const extrasAlitas = document.getElementById('alitas');
-    const totalCost = document.getElementById('total');
-    const pizzaQuantityDisplay = document.getElementById('rcantidad');
+    var pizzas = document.getElementById('pizza');
+    var pizza = document.getElementById('Cantidad');
+    var extrasRefresco = document.getElementById('refresco');
+    var extrasPapas = document.getElementById('papas');
+    var extrasAlitas = document.getElementById('alitas');
+    var total = document.getElementById('total');
+    var pizzaQuantityDisplay = document.getElementById('rcantidad');
 
 
     const precios = {
@@ -18,8 +18,8 @@
     };
 
     function calcularCosto() {
-    const selectedSize = pizzaSize.value;
-    const quantity = pizzaQuantity.value;
+    const selectedSize = pizzas.value;
+    const quantity = pizza.value;
     let cost = precios[selectedSize] * quantity;
 
     if (extrasRefresco.checked) {
@@ -34,12 +34,12 @@
         cost += precios.alitas;
     }
 
-    totalCost.textContent = '$' + cost;
+    total.textContent = '$' + cost;
     pizzaQuantityDisplay.textContent = quantity;
     }
 
-    pizzaSize.addEventListener('change', calcularCosto);
-    pizzaQuantity.addEventListener('input', calcularCosto);
+    pizzas.addEventListener('change', calcularCosto);
+    pizza.addEventListener('input', calcularCosto);
     extrasRefresco.addEventListener('change', calcularCosto);
     extrasPapas.addEventListener('change', calcularCosto);
     extrasAlitas.addEventListener('change', calcularCosto);
