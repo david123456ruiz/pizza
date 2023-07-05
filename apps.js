@@ -1,51 +1,47 @@
-// Obtener elementos del DOM
-const pizzaSize = document.getElementById('pizza');
-const pizzaQuantity = document.getElementById('Cantidad');
-const extrasRefresco = document.getElementById('refresco');
-const extrasPapas = document.getElementById('papas');
-const extrasAlitas = document.getElementById('alitas');
-const totalCost = document.getElementById('total');
-const pizzaQuantityDisplay = document.getElementById('rcantidad');
+    const pizzaSize = document.getElementById('pizza');
+    const pizzaQuantity = document.getElementById('Cantidad');
+    const extrasRefresco = document.getElementById('refresco');
+    const extrasPapas = document.getElementById('papas');
+    const extrasAlitas = document.getElementById('alitas');
+    const totalCost = document.getElementById('total');
+    const pizzaQuantityDisplay = document.getElementById('rcantidad');
 
-// Definir precios
-const precios = {
-  1: 100,    // Precio de la pizza individual
-  2: 120,    // Precio de la pizza grande
-  3: 150,    // Precio de la pizza familiar
-  4: 180,    // Precio de la pizza jumbo
-  refresco: 40,   // Precio del refresco
-  papas: 50,      // Precio de las papas
-  alitas: 75      // Precio de las alitas
-};
 
-// Función para calcular el costo total
-function calcularCosto() {
-  const selectedSize = pizzaSize.value;
-  const quantity = pizzaQuantity.value;
-  let cost = precios[selectedSize] * quantity;
+    const precios = {
+    1: 100,    
+    2: 120,    
+    3: 150,    
+    4: 180,   
+    refresco: 40,   
+    papas: 50,     
+    alitas: 75      
+    };
 
-  if (extrasRefresco.checked) {
-    cost += precios.refresco;
-  }
+    function calcularCosto() {
+    const selectedSize = pizzaSize.value;
+    const quantity = pizzaQuantity.value;
+    let cost = precios[selectedSize] * quantity;
 
-  if (extrasPapas.checked) {
-    cost += precios.papas;
-  }
+    if (extrasRefresco.checked) {
+        cost += precios.refresco;
+    }
 
-  if (extrasAlitas.checked) {
-    cost += precios.alitas;
-  }
+    if (extrasPapas.checked) {
+        cost += precios.papas;
+    }
 
-  totalCost.textContent = '$' + cost;
-  pizzaQuantityDisplay.textContent = quantity;
-}
+    if (extrasAlitas.checked) {
+        cost += precios.alitas;
+    }
 
-// Evento para detectar cambios en los elementos relevantes y recalcular el costo
-pizzaSize.addEventListener('change', calcularCosto);
-pizzaQuantity.addEventListener('input', calcularCosto);
-extrasRefresco.addEventListener('change', calcularCosto);
-extrasPapas.addEventListener('change', calcularCosto);
-extrasAlitas.addEventListener('change', calcularCosto);
+    totalCost.textContent = '$' + cost;
+    pizzaQuantityDisplay.textContent = quantity;
+    }
 
-// Calcular el costo inicial
-calcularCosto();
+    pizzaSize.addEventListener('change', calcularCosto);
+    pizzaQuantity.addEventListener('input', calcularCosto);
+    extrasRefresco.addEventListener('change', calcularCosto);
+    extrasPapas.addEventListener('change', calcularCosto);
+    extrasAlitas.addEventListener('change', calcularCosto);
+
+    calcularCosto();
