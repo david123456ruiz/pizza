@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body class="text-center ">
+    <h1>PIZZAS CHESTER </h1>
+    <img src="images.png" alt="Pizza">
+    <h3>Tamaño de la Pizza</h3>
+    <select class="bg-success" name="Pizza" id="pizza">
+        <option value="1">INDIVIDUAL $100</option>
+        <option value="2">GRANDE $120</option>
+        <option value="3">FAMILIAR $150</option>
+        <option value="4">JUMBO $180</option>
+    </select>
+    <h3>Cantidad</h3>
+    <input  onchange="cantidad()" type="range" max="10" min="1" value="1" id="Cantidad"><h3 id="rcantidad">1</h3>
+<h3>Extras</h3>
+<input type="checkbox" name="refresco" id="refresco">REFRESCO <br>
+<input type="checkbox" name="papas" id="papas"> PAPAS <br>
+<input type="checkbox" name="alitas" id="alitas"> ALITAS <br>
+
+<h3>Total</h3>
+<h3 id="total">0</h3>
+
+<script src="apps.js"></script>
+<script src="bootstrap.bundle.js"></script>
+<script src="bootstrap.min.js"></script>
+</body>
+</html>
